@@ -66,3 +66,11 @@ REFERENCES "employees" ("emp_no");
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
+SELECT e.emp_no, last_name, first_name, sex, salary
+FROM employees e RIGHT JOIN salaries s ON e.emp_no = s.emp_no;
+
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE employees IN (1986);
+
+
